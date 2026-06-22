@@ -10,3 +10,9 @@ Plan 2
 - Make the daemon publish the current track list while it is running.
 - Make `daw tracks list` print that track list instead of the placeholder message.
 - Verify the flow with `make build`, `make start`, `./zig-out/bin/daw tracks list`, and `make stop`.
+
+Plan 3
+
+- Reduce the published track state to two tracks.
+- Keep track 1 unmuted and track 2 muted.
+- Verify `./zig-out/bin/daw tracks list` prints only those two tracks.

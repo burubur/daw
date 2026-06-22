@@ -5,7 +5,10 @@ const tracks_state_path = "/tmp/daw-tracks.txt";
 
 // Global Track State
 pub const Track = struct { volume: f32 = 1.0, muted: bool = false };
-var g_tracks: [16]Track = .{Track{}} ** 16;
+var g_tracks = [_]Track{
+    .{ .volume = 1.0, .muted = false },
+    .{ .volume = 1.0, .muted = true },
+};
 
 // Audio Callback - The High-Priority Thread
 fn data_callback(pDevice: [*c]miniaudio.ma_device, pOutput: ?*anyopaque, pInput: ?*const anyopaque, frameCount: u32) callconv(.c) void {
